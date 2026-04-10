@@ -1,0 +1,31 @@
+# Dependency Review Action
+#
+# Scans manifest files (package.json) for vulnerable package versions.
+# Prevents supply chain attacks by blocking PRs with high-risk dependencies.
+# Documentation: https://github.com/actions/dependency-review-action
+
+name: "Supply Chain - Dependency Review"
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Dependency Review Scan
+        uses: actions/dependency-review-action@v4
+        with:
+          comment-summary-in-pr: always
+          fail-on-severity: high
+          # Architect's choice: Deny restrictive licenses to avoid legal risks
+          deny-licenses: GPL-1.0-or-later, LGPL-2.0-or-later
+          retry-on-snapshot-warnings: true
