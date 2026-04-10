@@ -1,0 +1,44 @@
+# Semantic Release Workflow
+#
+# Automates the entire release provenance: determining the next version number,
+# generating release notes, and publishing tags to GitHub.
+# Requires Conventional Commits (enforced by your project's Commitlint).
+
+name: "CD - Automated Release"
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write 
+  issues: write 
+  pull-requests: write 
+
+jobs:
+  release:
+    name: semantic-release
+    runs-on: ubuntu-latest
+    # Prevents multiple concurrent releases
+    concurrency: release
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Essential for git history analysis
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Execute Semantic Release
+        env:
+          # Use the default token provided by GitHub Actions or a custom PAT
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
