@@ -1,0 +1,33 @@
+{
+	"version": "0.2",
+	"language": "en,es",
+	"words": [
+		"nosniff",
+		"gsap",
+		"lenis",
+		"macbook",
+		"turbopack",
+		"commitlint",
+		"lintstagedrc",
+		"critters",
+		"draco",
+		"gltf",
+		"r3f",
+		"Sincronizamos",
+		"Multiplicamos",
+		"porque",
+		"segundos",
+		"evitar",
+		"saltos",
+		"Dejamos",
+		"controle",
+		"GTHD"
+	],
+	"ignorePaths": [
+		"node_modules/**",
+		".next/**",
+		"out/**",
+		"public/**",
+		"**/*.glb"
+	]
+}
