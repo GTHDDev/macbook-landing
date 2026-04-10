@@ -1,0 +1,49 @@
+# CodeQL Advanced Analysis
+#
+# This workflow automates the detection of security vulnerabilities 
+# using semantic analysis of the codebase.
+# High-level architecture requires continuous security feedback loops.
+
+name: "Security Scan - CodeQL"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '36 9 * * 6'
+
+jobs:
+  analyze:
+    name: semantic-analysis
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: javascript-typescript
+            build-mode: none # Standard for Next.js/TS projects
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL Engine
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+          # Includes extended security queries for professional grade scanning
+          queries: security-extended,security-and-quality
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: '/language:${{ matrix.language }}'
