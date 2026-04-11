@@ -1,16 +1,16 @@
 # CodeQL Advanced Analysis
 #
-# This workflow automates the detection of security vulnerabilities 
+# This workflow automates the detection of security vulnerabilities
 # using semantic analysis of the codebase.
 # High-level architecture requires continuous security feedback loops.
 
-name: "Security Scan - CodeQL"
+name: 'Security Scan - CodeQL'
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
   schedule:
     - cron: '36 9 * * 6'
 

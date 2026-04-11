@@ -2,17 +2,17 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support documentation.
 #
-# ESLint is a tool for identifying and reporting on patterns found in 
+# ESLint is a tool for identifying and reporting on patterns found in
 # ECMAScript/JavaScript code. It ensures architectural consistency.
 # More details at https://github.com/eslint/eslint and https://eslint.org
 
-name: "Security Scan - ESLint"
+name: 'Security Scan - ESLint'
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
   schedule:
     - cron: '29 5 * * 1'
 
@@ -23,7 +23,7 @@ jobs:
     permissions:
       contents: read
       security-events: write
-      actions: read 
+      actions: read
 
     steps:
       - name: Checkout Code
@@ -42,7 +42,7 @@ jobs:
 
       - name: Run ESLint Analysis
         env:
-          SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
+          SARIF_ESLINT_IGNORE_SUPPRESSED: 'true'
         # We use the current project configuration to avoid version conflicts
         run: npx eslint . --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif
         continue-on-error: true
