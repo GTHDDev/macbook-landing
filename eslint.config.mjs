@@ -29,7 +29,7 @@ const eslintConfig = defineConfig([
 			'jsx-a11y/alt-text': 'error',
 			'jsx-a11y/aria-props': 'error',
 			'jsx-a11y/aria-proptypes': 'error',
-			'jsx-a11y/role-has-required-aria-props': 'error',
+			'jsx-a11y/role-has-required-aria-props': 'error'
 		}
 	},
 	prettierConfig,
