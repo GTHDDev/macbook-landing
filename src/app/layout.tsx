@@ -1,18 +1,9 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import 'lenis/dist/lenis.css'
 import LenisProvider from '@/components/providers/LenisProvider'
-
-const geistSans = Geist({
-	variable: '--font-geist-sans',
-	subsets: ['latin']
-})
-
-const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
-	subsets: ['latin']
-})
+import GsapRegistry from '@/components/providers/GsapRegistry'
+import Navbar from '@/components/Navbar'
 
 export const metadata: Metadata = {
 	title: 'Apple Macbook M4',
@@ -21,16 +12,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children
-}: Readonly<{
+}: {
 	children: React.ReactNode
-}>) {
+}) {
 	return (
-		<html
-			lang='en'
-			className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-		>
+		<html lang='en' className='antialiased'>
 			<body>
-				<LenisProvider>{children}</LenisProvider>
+				<GsapRegistry />
+				<LenisProvider>
+					<Navbar />
+					{children}
+				</LenisProvider>
 			</body>
 		</html>
 	)

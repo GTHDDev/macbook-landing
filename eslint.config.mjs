@@ -13,11 +13,23 @@ const eslintConfig = defineConfig([
 				'error',
 				{
 					ignore: [
-						'position', 'rotation', 'scale', 'args', 'intensity',
-						'attach', 'geometry', 'material', 'castShadow', 'receiveShadow'
+						'position',
+						'rotation',
+						'scale',
+						'args',
+						'intensity',
+						'attach',
+						'geometry',
+						'material',
+						'castShadow',
+						'receiveShadow'
 					]
 				}
-			]
+			],
+			'jsx-a11y/alt-text': 'error',
+			'jsx-a11y/aria-props': 'error',
+			'jsx-a11y/aria-proptypes': 'error',
+			'jsx-a11y/role-has-required-aria-props': 'error'
 		}
 	},
 	prettierConfig,

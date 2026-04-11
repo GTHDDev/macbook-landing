@@ -4,11 +4,11 @@
 # Prevents supply chain attacks by blocking PRs with high-risk dependencies.
 # Documentation: https://github.com/actions/dependency-review-action
 
-name: "Supply Chain - Dependency Review"
+name: 'Supply Chain - Dependency Review'
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 permissions:
   contents: read
