@@ -69,7 +69,7 @@ const Hero = () => {
 					aria-hidden='true'
 				>
 					<source
-						src='/videos/hero-.mp4'
+						src='/videos/hero.mp4'
 						type='video/mp4'
 						media='(max-width: 768px)'
 					/>

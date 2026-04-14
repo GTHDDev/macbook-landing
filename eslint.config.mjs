@@ -22,7 +22,23 @@ const eslintConfig = defineConfig([
 						'geometry',
 						'material',
 						'castShadow',
-						'receiveShadow'
+						'receiveShadow',
+						'dispose',
+						'angle',
+						'decay',
+						'penumbra',
+						'position',
+						'rotation',
+						'scale',
+						'args',
+						'intensity',
+						'attach',
+						'geometry',
+						'material',
+						'castShadow',
+						'receiveShadow',
+						'map',
+						'toneMapped'
 					]
 				}
 			],
