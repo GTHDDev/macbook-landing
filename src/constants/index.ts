@@ -41,6 +41,7 @@ const performanceImgPositions: Array<{
 	left?: number
 	right?: number
 	bottom: number
+	transform?: string
 }> = [
 	{
 		id: 'p1',

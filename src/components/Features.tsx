@@ -11,9 +11,10 @@ import StudioLights from './three/StudioLights'
 import { featureSequence, features } from '@/constants/index'
 import useMacbookStore from '@/store/index'
 import { MacbookModel } from './models/Macbook'
+import * as THREE from 'three'
 
 function ModelScroll() {
-	const groupRef = useRef(null)
+	const groupRef = useRef<THREE.Group>(null)
 	const isMobile = useMediaQuery({ query: '(max-width: 1024px)' })
 	const { setTexture } = useMacbookStore()
 
