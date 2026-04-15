@@ -4,6 +4,7 @@ import 'lenis/dist/lenis.css'
 import LenisProvider from '@/components/providers/LenisProvider'
 import GsapRegistry from '@/components/providers/GsapRegistry'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
 	title: 'Apple Macbook M4',
@@ -22,6 +23,7 @@ export default function RootLayout({
 				<LenisProvider>
 					<Navbar />
 					{children}
+					<Footer />
 				</LenisProvider>
 			</body>
 		</html>
