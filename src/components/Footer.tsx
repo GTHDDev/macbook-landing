@@ -10,7 +10,7 @@ export default function Footer() {
 					More ways to shop: Find an Apple Store or other retailer near you. Or
 					call 000800 040 1966.
 				</p>
-				<Image src='/logo.svg' alt='Apple logo' fill />
+				<Image src='/logo.svg' alt='Apple logo' width={24} height={24} />
 			</div>
 
 			<hr />

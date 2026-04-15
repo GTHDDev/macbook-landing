@@ -26,14 +26,14 @@ const noChangeParts: string[] = [
 	'Object_10'
 ]
 
-const performanceImages: Array<{ id: string; src: string }> = [
-	{ id: 'p1', src: '/performance1.png' },
-	{ id: 'p2', src: '/performance2.png' },
-	{ id: 'p3', src: '/performance3.png' },
-	{ id: 'p4', src: '/performance4.png' },
-	{ id: 'p5', src: '/performance5.jpg' },
-	{ id: 'p6', src: '/performance6.png' },
-	{ id: 'p7', src: '/performance7.png' }
+const performanceImages: Array<{ id: string; src: string; alt: string }> = [
+	{ id: 'p1', src: '/performance1.png', alt: 'performance1' },
+	{ id: 'p2', src: '/performance2.png', alt: 'performance2' },
+	{ id: 'p3', src: '/performance3.png', alt: 'performance3' },
+	{ id: 'p4', src: '/performance4.png', alt: 'performance4' },
+	{ id: 'p5', src: '/performance5.jpg', alt: 'performance5' },
+	{ id: 'p6', src: '/performance6.png', alt: 'performance6' },
+	{ id: 'p7', src: '/performance7.png', alt: 'performance7' }
 ]
 
 const performanceImgPositions: Array<{
@@ -41,6 +41,7 @@ const performanceImgPositions: Array<{
 	left?: number
 	right?: number
 	bottom: number
+	transform?: string
 }> = [
 	{
 		id: 'p1',
@@ -109,17 +110,17 @@ const features: Array<{
 	},
 	{
 		id: 4,
-		icon: '/feature-icon4.svg ',
+		icon: '/feature-icon4.svg',
 		highlight: 'AirDrop.',
-		text: 'Wirelessly share photos , large files , and more between your iPhone , your Mac , & other devices.',
-		styles: 'right - 5 md:right - 20 top - [70 %] opacity - 0 translate - y - 5'
+		text: 'Wirelessly share photos, large files, and more between your iPhone, Mac, & other devices.',
+		styles: 'right-5 md:right-20 top-[70%] opacity-0 translate-y-5'
 	},
 	{
 		id: 5,
-		icon: '/feature-icon5.svg ',
+		icon: '/feature-icon5.svg',
 		highlight: 'Writing Tool.',
-		text: 'Write smarter and faster , whether it’s blogs , essays , or captions , AI helps polish your words.',
-		styles: 'left - 5 md:left - 20 top - [90 %] opacity - 0 translate - y - 5'
+		text: 'Write smarter and faster, whether it’s blogs, essays, or captions, AI helps polish your words.',
+		styles: 'left-5 md:left-20 top-[90%] opacity-0 translate-y-5'
 	}
 ]
 
